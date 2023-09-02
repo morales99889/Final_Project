@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "20e2f0b6-2c9d-4f2e-90c2-434c28a950d0",
+		"name": "WebApp API Collection",
+		"description": "A Postman collection for testing the WebApp API.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Owners",
+			"item": [
+				{
+					"name": "Get All Owners",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/owners",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Owner by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/owners/{{ownerId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"owners",
+								"{{ownerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Owner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john@example.com\",\n    \"phone\": \"123-456-7890\",\n    \"address\": \"123 Main St\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/owners",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Owner",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Updated John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"updated-john@example.com\",\n    \"phone\": \"987-654-3210\",\n    \"address\": \"456 Elm St\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/owners/{{ownerId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"owners",
+								"{{ownerId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Owner",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/owners/{{ownerId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"owners",
+								"{{ownerId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pets",
+			"item": [
+				{
+					"name": "Get All Pets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pet by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pets/{{petId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pets",
+								"{{petId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pet",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"owner\": {\n        \"ownerId\": 1\n    },\n    \"species\": {\n        \"speciesId\": 1\n    },\n    \"petName\": \"Buddy\",\n    \"petSex\": \"Male\",\n    \"petAge\": 3,\n    \"petWeight\": 10.5,\n    \"petNotes\": \"Friendly and playful\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/pets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"owner\": {\n        \"ownerId\": 1\n    },\n    \"species\": {\n        \"speciesId\": 1\n    },\n    \"petName\": \"Updated Buddy\",\n    \"petSex\": \"Male\",\n    \"petAge\": 4,\n    \"petWeight\": 11.0,\n    \"petNotes\": \"Still friendly and playful\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/pets/{{petId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pets",
+								"{{petId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/pets/{{petId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"pets",
+								"{{petId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Species",
+			"item": [
+				{
+					"name": "Get All Species",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/species",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Species by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/species/{{speciesId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"species",
+								"{{speciesId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Species",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"speciesName\": \"Dog\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/species",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Species",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"speciesName\": \"Updated Dog\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/species/{{speciesId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"species",
+								"{{speciesId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Species",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/species/{{speciesId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"species",
+								"{{speciesId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Veterinarians",
+			"item": [
+				{
+					"name": "Get All Veterinarians",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veterinarians",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veterinarians"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Veterinarian by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veterinarians/{{veterinarianId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veterinarians",
+								"{{veterinarianId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Veterinarian",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Doe\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/veterinarians",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veterinarians"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Veterinarian",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"veterinarianFirstName\": \"Updated Jane\",\n    \"veterinarianLastName\": \"Doe\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/veterinarians/{{veterinarianId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veterinarians",
+								"{{veterinarianId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Veterinarian",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veterinarians/{{veterinarianId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veterinarians",
+								"{{veterinarianId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VeterinarianPet",
+			"item": [
+				{
+					"name": "Create Veterinarian-Pet Relationship",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"veterinarian\": {\n        \"veterinarianId\": 1\n    },\n    \"pet\": {\n        \"petId\": 1\n    }\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/veterinarian-pet",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veterinarian-pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Veterinarian-Pet Relationship",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/veterinarian-pet/{{veterinarianId}}/{{petId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"veterinarian-pet",
+								"{{veterinarianId}}",
+								"{{petId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "ownerId",
+			"value": "1",
+			"type": "default"
+		},
+		{
+			"key": "petId",
+			"value": "1",
+			"type": "default"
+		},
+		{
+			"key": "speciesId",
+			"value": "1",
+			"type": "default"
+		},
+		{
+			"key": "veterinarianId",
+			"value": "1",
+			"type": "default"
+		}
+	]
+}
